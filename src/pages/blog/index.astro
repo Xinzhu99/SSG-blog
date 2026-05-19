@@ -3,7 +3,7 @@ import {getCollection} from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 const articles = await getCollection('blog');
-
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout>
@@ -11,7 +11,7 @@ const articles = await getCollection('blog');
 
     {articles.map(article => (
         <div>
-            <a href={`/blog/${article.id}`}>
+            <a href={`${base}/blog/${article.id}/`}>
                 <h2>{article.data.title}</h2>
             </a>
             <p>{article.data.date.toLocaleDateString('fr-FR')}</p>
