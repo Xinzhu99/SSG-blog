@@ -1,0 +1,21 @@
+---
+import {getCollection} from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const articles = await getCollection('blog');
+
+---
+
+<Layout>
+    <h1>Mes articles</h1>
+
+    {articles.map(article => (
+        <div>
+            <a href={`/blog/${article.id}`}>
+                <h2>{article.data.title}</h2>
+            </a>
+            <p>{article.data.date.toLocaleDateString('fr-FR')}</p>
+            <p>{article.data.description}</p>
+        </div>
+    ))}
+</Layout>

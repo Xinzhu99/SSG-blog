@@ -1,15 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
+		<link rel="stylesheet" href="/style/tokens.css" />
+		<link rel="stylesheet" href="/style/global.css" />
+		<title>Mon Blog</title>
+  	</head>
+
+
 	<body>
-		<slot />
+		<header>
+			<nav>
+				<p>Mob Blog</p>
+				<a href="/">Accueil</a>
+				<a href="/blog">Blog</a>
+			</nav>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer>
+			<p>@ 2026 Xinzhu </p>
+		</footer>
 	</body>
 </html>
 

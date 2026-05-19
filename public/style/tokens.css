@@ -1,0 +1,11 @@
+/*dans ce fichier on met que les variables de design*/
+:root {
+  --color-bg: #faf9f7;  
+  --color-accent: #1a8917;    
+  --color-text: #1a1a1a;
+  --font-serif: Georgia, serif;
+  --font-sans: system-ui, sans-serif;
+  --spacing-sm:0.75rem;
+  --spacing-md:1.5rem;
+  --spacing-lg:3rem;
+}

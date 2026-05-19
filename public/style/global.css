@@ -1,0 +1,45 @@
+
+/* ============================================
+   COMPOSITION — reset, body, layout
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box; /* largeur prévisible */
+  margin: 0;              /* neutralise les différences entre navigateurs */
+  padding: 0;             /* idem */
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var (--spacing-lg) var(--spacing-md);
+
+}
+
+/* ============================================
+   BLOCKS — composants spécifiques
+   ============================================ */
+nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* ============================================
+   UTILITIES — classes réutilisables
+   ============================================ */

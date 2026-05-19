@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// 1. Dire à Astro quelles pages générer
+export async function getStaticPaths() {
+  const articles = await getCollection('blog');
+  
+console.log(articles.map(a => ({ id: a.id, title: a.data?.title })));
+
+  return articles.map(article => ({
+    params: { slug: article.id },  // ← le slug dans l'URL
+    props: { article },             // ← l'article entier passé à la page
+  }));
+}
+
+// 2. Récupérer l'article de cette page
+const { article } = Astro.props;
+
+// 3. Transformer le Markdown en HTML
+const { Content } = await render(article);
+---
+
+<Layout>
+  <h1>{article.data.title}</h1>
+  <p>{article.data.date.toLocaleDateString('fr-FR')}</p>
+  
+  <!-- Affiche le contenu Markdown rendu en HTML -->
+  <Content />
+</Layout>
