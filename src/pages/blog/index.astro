@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL;
     <h1>Mes articles</h1>
 
     {articles.map(article => (
-        <div>
+        <div class="blog-card">
             <a href={`${base}blog/${article.id}/`}>
                 <h2>{article.data.title}</h2>
             </a>

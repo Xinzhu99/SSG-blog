@@ -14,32 +14,101 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.6;
+
+  min-height: 100vh;  /* body fait au moins 100% de la hauteur de l'écran */
+  display: flex;
+  flex-direction: column;  
 }
 
 main {
-  max-width: 700px;
+  max-width: 800px;
+  min-width: 500px;
   margin: 0 auto;
-  padding: var (--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+
+  flex:1;
 
 }
+/*pour les liens*/
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* a:hover {
+  text-decoration: underline;
+  color: var(--color-accent);
+} */
 
 /* ============================================
    BLOCKS — composants spécifiques
    ============================================ */
+header {
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-text);
+}
+
+
+
 nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.logo {
+  margin-right: auto;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/*sction hero*/
+.hero {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap:var(--spacing-lg);
+}
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-family: var(--font-serif);
+
+
 }
 
-a {
-  color: #222;
-  text-decoration: none;
+.hero-image img{
+  max-width: 400px;
 }
 
-a:hover {
-  text-decoration: underline;
+footer {
+  padding: var(--spacing-sm);
+  border-top: 1px solid var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 /* ============================================
    UTILITIES — classes réutilisables
    ============================================ */
+   .text-md{
+    font-size: 1rem;
+   }
+
+   .btn {
+    max-width: 100px;
+  background: var(--color-text);      
+  color: white;           
+  padding: var(--spacing-sm);         
+  border-radius: 2rem;
+  display: inline-block;      
+}

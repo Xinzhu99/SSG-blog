@@ -1,6 +1,6 @@
 /*dans ce fichier on met que les variables de design*/
 :root {
-  --color-bg: #faf9f7;  
+  --color-bg: rgb(247, 244, 237);  
   --color-accent: #1a8917;    
   --color-text: #1a1a1a;
   --font-serif: Georgia, serif;

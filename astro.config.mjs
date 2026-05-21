@@ -3,5 +3,5 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://xinzhu99.github.io',
-  base: '/SSG-blog/',
+  base: '/SSG-blog',
 });
