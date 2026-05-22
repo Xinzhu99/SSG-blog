@@ -14,7 +14,7 @@ export async function GET(context) {
       title: article.data.title,
       description: article.data.description,
       pubDate: article.data.date,
-      link: `/SSG-blog/blog/${article.slug}/`,
+      link: `/SSG-blog/blog/${article.id}/`,
     })),
   });
 }
