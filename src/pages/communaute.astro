@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { fetchRSS } from '../lib/rss-fetcher.js';
+
+const flux = [
+  { url: 'https://meriemmehdi472-coder.github.io/Blog-Tech/rss.xml', auteur: 'Meriem' },
+  { url: 'https://victorlpr.github.io/Blog/rss.xml', auteur: 'Victor'},
+];
+
+const tousLesArticles = (
+  await Promise.all(flux.map(f => fetchRSS(f.url, f.auteur)))
+).flat();
+
+tousLesArticles.sort((a, b) => b.date - a.date);
+---
+
+<Layout>
+  <h1>Communauté</h1>
+
+  <p class="text-md">Les derniers articles de mes camarades Ada</p>
+
+  <div class="cards-wrapper">
+
+    {tousLesArticles.map((article, index) => (
+      <div class="blog-card">
+        <span class="blog-card-index">0{index + 1}</span>
+        <div>
+          <a href={article.link} target="_blank">
+            <h2>{article.title}</h2>
+          </a>
+          <p>{article.description}</p>
+          <p class="blog-card-auteur">{article.auteur}</p>
+        </div>
+        <span class="blog-card-date">
+          {article.date.toLocaleDateString('fr-FR')}
+        </span>
+        
+      </div>
+    ))}
+  </div>
+</Layout>
