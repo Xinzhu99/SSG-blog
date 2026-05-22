@@ -5,15 +5,18 @@ const base = import.meta.env.BASE_URL;
 ---
 <Layout>
   <section class="hero">
-    <div class="hero-text">
-      <h1>Apprentissage & Reconversion</h1>
-      <p class="text-md">Je suis Xinzhu. Sur ce blog je partage mes apprentissages.</p>
-      <a class="btn" href={`${base}/blog/`}>Découvrir</a>
+    <div class="hero-body">
+      <h1 class="hero-title">Apprentissage<br/>&amp; Reconversion</h1>
+
+      <div class="hero-right">
+        <p class="text-md">Je suis Xinzhu. Sur ce blog je partage mes apprentissages.</p>
+        <a class="btn" href={`${base}/blog/`}>Découvrir →</a>
+      </div>
     </div>
 
     <div class="hero-image">
       <img src={heroImage.src} alt="Illustration développeuse" />
     </div>
-
+    
   </section>
 </Layout>
