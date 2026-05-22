@@ -12,7 +12,12 @@ const base = import.meta.env.BASE_URL;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" href={`${base}/style/tokens.css`}/>
 		<link rel="stylesheet" href={`${base}/style/global.css`} />
-
+		<link 
+			rel="alternate" 
+			type="application/rss+xml" 
+			title="Mon Blog RSS" 
+			href="/SSG-blog/rss.xml" 
+			/>
 		<title>Mon Blog</title>
   	</head>
 
@@ -24,6 +29,7 @@ const base = import.meta.env.BASE_URL;
 				<a href={`${base}/`}>Accueil</a>
 				<a href={`${base}/blog/`}>Blog</a>
 				<a href="https://xinzhu.fr">About</a>
+				<a href={`${base}/rss.xml`}>Flux RSS</a>
 
 			</nav>
 		</header>
